@@ -15,11 +15,11 @@
 
     <link rel="canonical" href="https://demo-basic.adminkit.io/" />
 
-    <title>AdminKit Demo - Bootstrap 5 Admin Template</title>
+    <title><?= $this->renderSection('title') ?></title>
 
     <link href="<?= base_url() ?>/assets/css/app.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <link href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
 </head>
 
 <body>
@@ -40,6 +40,30 @@
     </div>
 
     <script src="<?= base_url() ?>/assets/js/app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#initabel').DataTable();
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('#foto').change(function(e) {
+                const file = e.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        $('#preview').attr('src', e.target.result).removeClass('d-none');
+                    };
+                    reader.readAsDataURL(file);
+                } else {
+                    $('#preview').addClass('d-none').attr('src', '');
+                }
+            });
+        });
+    </script>
+
 </body>
 
 </html>
