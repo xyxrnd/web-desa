@@ -63,41 +63,79 @@
     </section>
 
     <!-- Features Section -->
-    <section id="about" class="feature">
-        <div class="container">
-            <div class="row text-center">
-                <h2 class="mb-4">Tentang Kami</h2>
-                <p>Kami berkomitmen untuk menyediakan solusi desain web terbaik dengan fokus pada kreativitas, kinerja, dan keunggulan.</p>
-            </div>
-        </div>
-    </section>
+
 
     <!-- Services Section -->
     <section id="services" class="feature bg-light">
         <div class="container">
-            <div class="row text-center">
-                <h2 class="mb-4">Layanan Kami</h2>
-                <div class="col-md-4">
-                    <div class="card p-3">
-                        <h5 class="card-title">Desain Responsif</h5>
-                        <p class="card-text">Kami memastikan website Anda tampil optimal di semua perangkat.</p>
-                    </div>
+            <div class="row">
+                <div class="col-12 text-center mb-4">
+                    <h2>Layanan Kami</h2>
                 </div>
-                <div class="col-md-4">
-                    <div class="card p-3">
-                        <h5 class="card-title">Pengembangan Web</h5>
-                        <p class="card-text">Pengembangan web dengan teknologi terbaru untuk kinerja terbaik.</p>
+            </div>
+            <div class="row">
+                <?php foreach ($layanan as $l) : ?>
+                    <div class="col-md-4 mb-4">
+                        <div class="card p-3 h-100">
+                            <h5 class="card-title"><?= esc($l['nama_layanan']); ?></h5>
+                            <p class="card-text"><?= esc($l['deskripsi']); ?></p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card p-3">
-                        <h5 class="card-title">SEO Optimization</h5>
-                        <p class="card-text">Optimasi mesin pencari untuk meningkatkan visibilitas bisnis Anda.</p>
-                    </div>
-                </div>
+                <?php endforeach; ?>
             </div>
         </div>
     </section>
+    <section id="about" class="feature">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-4">
+                    <h2 class="mb-4">Berita Terbaru</h2>
+                </div>
+            </div>
+            <div class="row">
+                <?php foreach ($berita as $b) : ?>
+                    <div class="col-md-4 mb-4">
+                        <div class="card p-3 h-100">
+                            <img src="<?= base_url('foto/berita/' . $b['foto']) ?>" class="card-img-top" alt="<?= $b['nama'] ?>">
+                            <div class="card-body">
+                                <h5 class="card-title"><?= esc($b['nama']); ?></h5>
+                                <p class="card-text"><?= esc($b['deskripsi']); ?></p>
+                            </div>
+                            <div class="card-footer text-muted">
+                                <small>Dibuat pada: <?= esc($b['dibuat_tanggal']); ?></small>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </section>
+    <section id="about" class="feature">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-4">
+                    <h2 class="mb-4">Agenda Terbaru</h2>
+                </div>
+            </div>
+            <div class="row">
+                <?php foreach ($agenda as $a) : ?>
+                    <div class="col-md-4 mb-4">
+                        <div class="card p-3 h-100">
+                            <img src="<?= base_url('foto/agenda/' . $a['foto_agenda']) ?>" class="card-img-top" alt="<?= $a['nama_agenda'] ?>">
+                            <div class="card-body">
+                                <h5 class="card-title"><?= esc($a['nama_agenda']); ?></h5> <small><?= $a['tanggal']; ?></small>
+                                <p class="card-text"><?= esc($a['deskripsi']); ?></p>
+                            </div>
+                            <div class="card-footer text-muted">
+                                <small>Dibuat pada: <?= esc($b['dibuat_tanggal']); ?></small>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </section>
+
 
     <!-- Contact Section -->
     <section id="contact" class="feature">

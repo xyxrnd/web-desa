@@ -1,23 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
+<?= $this->extend('layouts/base') ?>
 
-<head>
-    <meta charset="UTF-8">
-    <title>Edit Layanan</title>
-</head>
+<?= $this->section('title') ?>Edit Layanan<?= $this->endSection() ?>
 
-<body>
-    <h1>Edit Layanan</h1>
-    <form action="<?= base_url('admin/layanan/update/' . $layanan['id_layanan']); ?>" method="post">
-        <label for="nama_layanan">Nama Layanan</label><br>
-        <input type="text" name="nama_layanan" id="nama_layanan" value="<?= $layanan['nama_layanan']; ?>" required><br><br>
+<?= $this->section('content') ?>
+<div class="container-fluid">
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Edit Data Layanan</h1>
+        <a href="<?= base_url('admin/layanan') ?>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+            <i class="fas fa-plus fa-sm text-white-500"></i> Kembali
+        </a>
+    </div>
 
-        <label for="deskripsi">Deskripsi</label><br>
-        <textarea name="deskripsi" id="deskripsi" required><?= $layanan['deskripsi']; ?></textarea><br><br>
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <form action="<?= base_url('admin/layanan/update/' . $layanan['id_layanan']); ?>" method="post">
+                    <?= csrf_field() ?>
+                    <input type="hidden" name="_method" value="PUT">
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label for="nama_layanan" class="form-label">Nama Layanan</label>
+                            <input type="text" name="nama_layanan" id="nama_layanan" class="form-control" value="<?= esc($layanan['nama_layanan']) ?>" required>
+                        </div>
 
-        <button type="submit">Update</button>
-        <a href="<?= base_url('layanan'); ?>">Kembali</a>
-    </form>
-</body>
-
-</html>
+                        <div class="mb-3">
+                            <label for="deskripsi" class="form-label">Deskripsi</label>
+                            <textarea name="deskripsi" id="deskripsi" class="form-control" required><?= esc($layanan['deskripsi']) ?></textarea>
+                        </div>
+                    </div>
+                    <div class="card-footer text-right">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fa fa-save mr-2"></i>Update
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<?= $this->endSection() ?>

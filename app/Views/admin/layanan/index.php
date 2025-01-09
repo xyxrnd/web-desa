@@ -34,7 +34,7 @@
                                 <td><?= esc($g['deskripsi']) ?></td>
                                 <td>
                                     <a href="<?= base_url('admin/layanan/edit/' . $g['id_layanan']) ?>" class="btn btn-warning btn-sm">Edit</a>
-                                    <a href="<?= base_url('admin/layanan/hapus/' . $g['id_layanan']) ?>" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus menu ini?')">Hapus</a>
+                                    <a href="<?= base_url('admin/layanan/delete/' . $g['id_layanan']) ?>" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus menu ini?')">Hapus</a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
