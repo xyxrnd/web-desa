@@ -25,9 +25,8 @@
             </li>
 
             <li class="sidebar-item">
-                <a class="sidebar-link" href="pages-sign-up.html">
-                    <i class="align-middle" data-feather="user-plus"></i> <span class="align-middle">Sign
-                        Up</span>
+                <a class="sidebar-link" href="<?= base_url('admin/galeri') ?>">
+                    <i class="align-middle" data-feather="user-plus"></i> <span class="align-middle">Galeri Foto</span>
                 </a>
             </li>
 
