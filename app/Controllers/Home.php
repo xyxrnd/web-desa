@@ -20,14 +20,14 @@ class Home extends BaseController
     // Method untuk menampilkan semua data
     public function index()
     {
-        $berita = $this->berita->findAll();
-        $agenda = $this->agenda->findAll();
-        $layanan = $this->layananModel->findAll();
+        $berita = $this->berita->orderBy('dibuat_tanggal', 'DESC')->limit(2)->findAll();
+        $agenda = $this->agenda->orderBy('dibuat_tanggal', 'DESC')->limit(2)->findAll();
+        $layanan = $this->layananModel->findAll(3);
         $data = [
             'berita' => $berita,
             'agenda' => $agenda,
             'layanan' => $layanan
         ];
-        return view('home', $data);  // Tampilkan ke view
+        return view('home', $data);
     }
 }
