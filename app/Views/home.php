@@ -8,21 +8,14 @@
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
         </div>
         <div class="carousel-inner">
-            <!-- Foto Berita -->
-            <?php foreach ($berita as $index => $b): ?>
-                <div class="carousel-item <?= $index === 0 ? 'active' : '' ?>">
-                    <img src="<?= base_url('foto/berita/' . $b['foto']) ?>" class="d-block w-100" alt="<?= esc($b['nama']) ?>">
-                </div>
-            <?php endforeach; ?>
-            <!-- Foto Agenda -->
-            <?php foreach ($agenda as $index => $a): ?>
-                <div class="carousel-item">
-                    <img src="<?= base_url('foto/agenda/' . $a['foto_agenda']) ?>" class="d-block w-100" alt="<?= esc($a['nama_agenda']) ?>">
-                </div>
-            <?php endforeach; ?>
+            <div class="carousel-item active">
+                <img src="<?= base_url('foto/banner/1.webp') ?>" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="<?= base_url('foto/banner/2.webp') ?>" class="d-block w-100" alt="...">
+            </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>

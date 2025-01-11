@@ -1,0 +1,24 @@
+<?= $this->extend('layouts/front/base') ?>
+<?= $this->section('title') ?>Galeri<?= $this->endSection() ?>
+
+<?= $this->section('content') ?>
+<section id="services" class="feature py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mb-4">
+                <h2>Galeri Kami</h2>
+            </div>
+        </div>
+        <div class="row">
+            <?php foreach ($galeri as $g) : ?>
+                <div class="col-md-4 mb-4">
+                    <div class="card p-3 h-100 text-center">
+                        <h5 class="card-title"><?= esc($g['judul']); ?></h5>
+                        <p class="card-text"><img src="<?= base_url('foto/galeri/' . $g['foto']) ?>" class="card-img-top" alt="<?= esc($g['judul']) ?>"></p>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</section>
+<?= $this->endSection() ?>

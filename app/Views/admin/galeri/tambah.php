@@ -38,7 +38,7 @@
                         <div class="form-group">
                             <label for="foto">Foto Berita</label>
                             <input type="file" class="form-control mb-3" id="foto" name="foto" accept="image/*">
-                            <img id="preview" class="img-preview d-none" alt="Preview foto">
+                            <img id="preview" class="img-preview d-none w-50" alt="Preview foto">
                         </div>
                     </div>
                     <div class="card-footer text-right">
