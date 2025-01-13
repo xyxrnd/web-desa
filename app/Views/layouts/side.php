@@ -31,8 +31,8 @@
             </li>
 
             <li class="sidebar-item">
-                <a class="sidebar-link" href="pages-blank.html">
-                    <i class="align-middle" data-feather="book"></i> <span class="align-middle">Blank</span>
+                <a class="sidebar-link" href="<?= base_url('admin/layanan') ?>">
+                    <i class="align-middle" data-feather="book"></i> <span class="align-middle">Layanan</span>
                 </a>
             </li>
         </ul>

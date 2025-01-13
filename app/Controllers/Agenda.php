@@ -37,8 +37,7 @@ class Agenda extends BaseController
         }
 
         // Kirim data ke view
-        $data = [
-            'title' => $agenda['nama'], // Judul di tab browser
+        $data = [ // Judul di tab browser
             'agenda' => $agenda,       // Data agenda
         ];
 
